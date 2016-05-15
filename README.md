@@ -51,7 +51,7 @@ Usage
 -----
 
 ```shell
-$ npm install microkernel-ext-co
+$ npm install microkernel microkernel-ext-co
 ```
 
 ```js
