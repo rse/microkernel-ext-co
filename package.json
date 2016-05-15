@@ -1,0 +1,30 @@
+{
+    "name":        "microkernel-co",
+    "version":     "0.9.0",
+    "description": "Microkernel extension procedure for wrapping enter/leave generator methods with co-routines",
+    "keywords": [
+        "microkernel", "module", "co"
+    ],
+    "repository": {
+        "type": "git",
+        "url":  "https://github.com/rse/microkernel-ext-co.git"
+    },
+    "author": {
+        "name":  "Ralf S. Engelschall",
+        "email": "rse@engelschall.com",
+        "url":   "http://engelschall.com"
+    },
+    "license":  "MIT",
+    "homepage": "https://github.com/rse/microkernel-ext-co",
+    "bugs":     "https://github.com/rse/microkernel-ext-co/issues",
+    "dependencies": {
+        "co":   "~4.6.0"
+    },
+    "peerDependencies": {
+        "microkernel": "*"
+    },
+    "scripts": {
+        "prepublish": "jshint microkernel-ext-co.js && babel --presets es2015 microkernel-ext-co.js >microkernel-ext-co.js5"
+    },
+    "main": "microkernel-ext-co.js5"
+}
