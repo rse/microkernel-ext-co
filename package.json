@@ -1,6 +1,6 @@
 {
     "name":        "microkernel-ext-co",
-    "version":     "0.9.3",
+    "version":     "0.9.4",
     "description": "Microkernel extension procedure for wrapping enter/leave generator methods with co-routines",
     "keywords": [
         "microkernel", "module", "co"
