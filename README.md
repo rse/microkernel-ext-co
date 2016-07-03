@@ -2,7 +2,7 @@
 microkernel-ext-co
 ==================
 
-Microkernel extension procedure for wrapping enter/leave generator methods with co-routines.
+Microkernel extension procedure for on-the-fly wrapping enter/leave generator methods with Promise-based co-routines.
 
 <p/>
 <img src="https://nodei.co/npm/microkernel-ext-co.png?downloads=true&stars=true" alt=""/>
@@ -28,7 +28,7 @@ export default class Module {
     start (kernel) {
         return co(function * () {
             ...
-            yield ...
+            yield (...)
             ...
         }.bind(this))
     }
@@ -41,7 +41,7 @@ export default class Module {
 export default class Module {
     * start (kernel) {
         ...
-        yield ...
+        yield (...)
         ...
     }
 }
@@ -55,14 +55,14 @@ $ npm install microkernel microkernel-ext-co
 ```
 
 ```js
-var Microkernel = require("microkernel")
-var kernel = new Microkernel()
+const Microkernel = require("microkernel")
+const kernel      = new Microkernel()
 
 kernel.exec("microkernel-ext-co").then(function () {
     kernel.load(...)
-    kernel.state("started").then(function onSuccess () {
+    kernel.state("started").then(() => {
         ...
-    }, function onError (err) {
+    }, (err) => {
         ...
     })
 })
