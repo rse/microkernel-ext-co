@@ -1,6 +1,6 @@
 /*
 **  Microkernel -- Microkernel for Server Applications
-**  Copyright (c) 2015-2017 Ralf S. Engelschall <rse@engelschall.com>
+**  Copyright (c) 2016-2018 Ralf S. Engelschall <rse@engelschall.com>
 **
 **  Permission is hereby granted, free of charge, to any person obtaining
 **  a copy of this software and associated documentation files (the
@@ -23,10 +23,10 @@
 */
 
 /*  external requirement  */
-import co from "co"
+const co = require("co")
 
-/*  export a Microkernel extension procedure  */
-export default function (kernel) {
+/*  the Microkernel extension procedure  */
+const Extension = (kernel) => {
     /*  latch into the microkernel  */
     kernel.latch("microkernel:state:call:before", (method, mod) => {
         /*  on-the-fly wrap generator methods into co-routine methods  */
@@ -38,4 +38,7 @@ export default function (kernel) {
         return method
     })
 }
+
+/*  export the Microkernel extension  */
+module.exports = Extension
 
